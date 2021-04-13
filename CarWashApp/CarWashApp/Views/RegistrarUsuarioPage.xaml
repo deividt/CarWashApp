@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+                xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                xmlns:control="clr-namespace:CarWashApp.Controls"
+                xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+                mc:Ignorable="d"
+                x:Class="CarWashApp.Views.RegistrarUsuarioPage"
+                x:DataType="viewModels:RegistrarUsuarioPage"
+                xmlns:views="clr-namespace:CarWashApp.Views.Base"
+                xmlns:viewModels="clr-namespace:CarWashApp.Views"
+                Shell.NavBarIsVisible="False"
+                Shell.PresentationMode="ModalAnimated"
+                BackgroundColor="{StaticResource Gray-100}">
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.VerticalOptions>
+                <OnIdiom
+                    x:TypeArguments="LayoutOptions"
+                    Default="CenterAndExpand"
+                    Phone="FillAndExpand"/>
+            </ScrollView.VerticalOptions>
+            <StackLayout
+                Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                                                                 PhoneLandscape='150,32',
+                                                                 TabletPortrait='200,50',
+                                                                 TabletLandscape='300,50',
+                                                                 Desktop='30'}"
+                Spacing="0"
+                VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="Center"
+                             Spacing="24"
+                             VerticalOptions="CenterAndExpand">
+
+                    <!--  Registrar - Título - Label  -->
+                    <Label FontFamily="MontserratSemiBold"
+                           FontSize="20"
+                           HorizontalOptions="Center"
+                           Style="{StaticResource LabelStyle}"
+                           Text="Registrar" />
+
+                    <!--  Registrar - Subtítulo - Label  -->
+                    <Label Margin="0,-16,0,8"
+                           HorizontalOptions="Center"
+                           Style="{StaticResource LabelStyle}"
+                           Text="Preencha as informações"
+                           TextColor="{StaticResource Gray-800}" />
+
+                    <!--  Registrar - Usuário  -->
+                    <StackLayout>
+                        <border:SfBorder
+                        x:Name="borderUsuario"
+                        BackgroundColor="{StaticResource Gray-White}"
+                        Style="{StaticResource SfBorderStyle}">
+                            <control:BorderlessEntry
+                            x:Name="entryUsuario"
+                            Placeholder="Usuário"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            TextColor="{StaticResource Gray-900}" 
+                            ClearButtonVisibility="WhileEditing"/>
+                        </border:SfBorder>
+
+                        <!--  Registrar - E-mail  -->
+                        <border:SfBorder
+                            x:Name="borderEmail"
+                            BackgroundColor="{StaticResource Gray-White}"
+                            Style="{StaticResource SfBorderStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <control:BorderlessEntry
+                                    x:Name="entryEmail"
+                                    ReturnType="Next"
+                                    ClearButtonVisibility="WhileEditing"
+                                    Placeholder="Email"
+                                    Keyboard="Email"
+                                    PlaceholderColor="{StaticResource Gray-700}"
+                                    Style="{StaticResource EntryStyle}"
+                                    TextColor="{StaticResource Gray-900}" />
+
+                                <Label
+                                    x:Name="labelIconValidationEmail"
+                                    Margin="15,0"
+                                    FontFamily="MaterialDesignIcons"
+                                    FontSize="18"
+                                    HorizontalOptions="EndAndExpand"
+                                    HorizontalTextAlignment="End"
+                                    Text="{StaticResource IconAlertCircle_Mdi}"
+                                    TextColor="{StaticResource Red}"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                        </border:SfBorder>
+
+                        <!--  Registrar - Validar e-mail  -->
+                        <Label
+                            x:Name="labelValidationEmail"
+                            Margin="15,-5,0,0"
+                            FontSize="12"
+                            Text="Informe um endereço de e-mail válido"
+                            TextColor="{StaticResource Red}"
+                            VerticalOptions="FillAndExpand" />
+                    </StackLayout>
+
+                    <!--  Registrar - Senha  -->
+                    <border:SfBorder
+                        x:Name="borderSenha"
+                        BackgroundColor="{StaticResource Gray-White}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="entrySenha"
+                            IsPassword="true"
+                            Placeholder="Senha"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            TextColor="{StaticResource Gray-900}" 
+                            ClearButtonVisibility="WhileEditing"/>
+                    </border:SfBorder>
+
+                    <!--  Registrar - Confirmar Senha  -->
+                    <border:SfBorder
+                        x:Name="borderConfirmarSenha"
+                        BackgroundColor="{StaticResource Gray-White}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="entryConfirmarSenha"
+                            IsPassword="true"
+                            Placeholder="Confirmar senha"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            TextColor="{StaticResource Gray-900}" 
+                            ClearButtonVisibility="WhileEditing"/>
+                    </border:SfBorder>
+
+                    <!--  Registrar  -->
+                    <buttons:SfButton
+                        x:Name="btnRegistrar"
+                        CornerRadius="20"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="REGISTRAR" />
+
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        VerticalOptions="End">
+
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Já possui uma conta?"
+                            TextColor="{DynamicResource Gray-800}" />
+
+                        <buttons:SfButton
+                            x:Name="btnLogin"
+                            CornerRadius="4"
+                            Style="{StaticResource SfFlatButtonStyle}"
+                            Text="LogIn" />
+                    </StackLayout>
+
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        VerticalOptions="End">
+
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Erro ao registrar?"
+                            TextColor="{DynamicResource Gray-800}" />
+
+                        <buttons:SfButton
+                            x:Name="btnRegistrarWeb"
+                            CornerRadius="4"
+                            Style="{StaticResource SfFlatButtonStyle}"
+                            Text="Registrar pela Web" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</views:BaseView>

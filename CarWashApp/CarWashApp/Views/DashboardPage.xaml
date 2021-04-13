@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                x:Class="CarWashApp.Views.DashboardPage"
+                x:DataType="viewModels:DashboardViewModel"
+                xmlns:views="clr-namespace:CarWashApp.Views.Base"
+                xmlns:viewModels="clr-namespace:CarWashApp.ViewModels">
+    <ContentPage.BindingContext>
+        <viewModels:DashboardViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding SettingsCommand}"
+                     Order="Primary"
+                     Priority="0" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="MaterialDesignIcons"
+                    Glyph="{StaticResource IconDotsVertical_Mdi}">
+                </FontImageSource>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <Label Text="Olá" FontFamily="MontserratMedium"></Label>
+            <Label Text="{Binding Username}" FontFamily="MontserratMedium"></Label>
+        </StackLayout>
+        <buttons:SfButton Command="{Binding GetRelacaoServicosCommand}"
+                          Margin="0,24,0,32"
+                          Style="{StaticResource SfButtonStyle}"
+                          Text="Serviços"
+                          HorizontalOptions="CenterAndExpand"/>
+    </StackLayout>
+</views:BaseView>

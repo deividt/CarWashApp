@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:sfButtons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:control="clr-namespace:CarWashApp.Controls"
+             x:Class="CarWashApp.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- FontAwesomeSolid - IconFont -->
+
+            <!-- Home: Unicode(f015) - https://fontawesome.com/icons/home?style=solid -->
+            <x:String x:Key="IconHome"></x:String>
+
+            <!-- Info: Unicode(f129) - https://fontawesome.com/icons/info?style=solid -->
+            <x:String x:Key="IconInfo"></x:String>
+
+            <!-- Bars: Unicode(f0c9) - https://fontawesome.com/icons/bars?style=solid -->
+            <x:String x:Key="IconBars"></x:String>
+
+            <!-- Gear: Unicode(f013) - https://fontawesome.com/icons/cog?style=solid -->
+            <x:String x:Key="IconGear"></x:String>
+
+            <!-- PowerOff: Unicode(f011) - https://fontawesome.com/icons/power-off?style=solid -->
+            <x:String x:Key="IconPowerOff"></x:String>
+
+            <!-- MaterialDesignIcons - IconFont - https://pictogrammers.github.io/@mdi/font/5.4.55/ ou https://materialdesignicons.com/ -->
+
+            <!-- Gear: Unicode(F08BB) - "mdi-cog-outline" -->
+            <x:String x:Key="IconGear_Mdi">󰢻</x:String>
+
+            <!-- Dots Vertical: Unicode(F01D9) - "mdi-dots-vertical" -->
+            <x:String x:Key="IconDotsVertical_Mdi">󰇙</x:String>
+
+            <!-- Dots Horizontal: Unicode(F01D8) - "mdi-dots-horizontal" -->
+            <x:String x:Key="IconDotsHorizontal_Mdi">󰇘</x:String>
+
+            <!-- Account Edit: Unicode(F0FFB) - "mdi-account-edit-outline" -->
+            <x:String x:Key="IconAccountEdit_Mdi">󰿻</x:String>
+
+            <!-- Account Change Password: Unicode(F0BE4) - "mdi-account-key-outline" -->
+            <x:String x:Key="IconAccountChangePassword_Mdi">󰯤</x:String>
+
+            <!-- Navigate Next: Unicode(F0142) - "mdi-chevron-right" -->
+            <x:String x:Key="IconNavigateNext_Mdi">󰅂</x:String>
+
+            <!-- Notification: Unicode(F009C) - "mdi-bell-outline" -->
+            <x:String x:Key="IconNotification_Mdi">󰂜</x:String>
+
+            <!-- About: Unicode(F02FD) - "mdi-information-outline" -->
+            <x:String x:Key="IconAbout_Mdi">󰋽</x:String>
+
+            <!-- Help: Unicode(F0625) - "mdi-help-circle-outline" -->
+            <x:String x:Key="IconHelp_Mdi">󰘥</x:String>
+
+            <!-- Alert Circle: Unicode(F05D6) - "mdi-alert-circle-outline" -->
+            <x:String x:Key="IconAlertCircle_Mdi">󰗖</x:String>
+
+            <!-- Cores - Novo Tema -->
+            <Color x:Key="PrimaryColor">#f54e5e</Color>
+            <Color x:Key="PrimaryDarkColor">#d0424f</Color>
+            <Color x:Key="PrimaryDarkenColor">#ab3641</Color>
+            <Color x:Key="PrimaryLighterColor">#edcacd</Color>
+            <Color x:Key="PrimaryGradient">#e83f94</Color>
+            <Color x:Key="PrimaryLight">#ffe8f4</Color>
+            <Color x:Key="SecondaryGradient">#7644ad</Color>
+            <Color x:Key="Secondary">#d54381</Color>
+            <Color x:Key="Green">#7ed321</Color>
+            <Color x:Key="Red">#ff4a4a</Color>
+            <Color x:Key="Orange">#ff844a</Color>
+            <Color x:Key="Blue">#4acaff</Color>
+            <Color x:Key="HyperLink">#567cd7</Color>
+            <Color x:Key="Transparent">Transparent</Color>
+            <Color x:Key="BorderBackgroundColor">#20FFFFFF</Color>
+            <Color x:Key="EntryPlaceholderColor">#A0FFFFFF</Color>
+
+            <Color x:Key="Gray-100">#f6f7f8</Color>
+            <Color x:Key="Gray-200">#ebecef</Color>
+            <Color x:Key="Gray-300">#ced2d9</Color>
+            <Color x:Key="Gray-400">#b2b8c2</Color>
+            <Color x:Key="Gray-500">#959eac</Color>
+            <Color x:Key="Gray-600">#788396</Color>
+            <Color x:Key="Gray-700">#606a7b</Color>
+            <Color x:Key="Gray-800">#4a515e</Color>
+            <Color x:Key="Gray-900">#333942</Color>
+            <Color x:Key="Gray-Black">#000000</Color>
+            <Color x:Key="Gray-White">#ffffff</Color>
+
+            <!-- Cores - Tema normal -->
+            <Color x:Key="BackgroundColorDark">#111111</Color>
+            <Color x:Key="BackgroundColorLight">#FFFFFF</Color>
+            <Color x:Key="TextColorDark">#FFFFFF</Color>
+            <Color x:Key="TextColorLight">#FFFFFF</Color>
+
+            <Color x:Key="SelectedItemColorLight">#cacc69</Color>
+            <Color x:Key="SelectedItemColorDark">#cacc69</Color>
+
+            <Color x:Key="HeaderBarBackgroundColorLight">#750000</Color>
+            <Color x:Key="HeaderBarBackgroundColorDark">#111111</Color>
+            <Color x:Key="HeaderBarTextColorLight">#FFFFFF</Color>
+            <Color x:Key="HeaderBarTextColorDark">#FFFFFF</Color>
+
+            <Color x:Key="PrimaryBackgroundDark">#750000</Color>
+            <Color x:Key="PrimaryBackgroundLight">#750000</Color>
+
+            <Color x:Key="PrimaryTextDark">#FFFFFF</Color>
+            <Color x:Key="PrimaryTextLight">#FFFFFF</Color>
+
+            <!-- Estilos -->
+            <Style TargetType="RefreshView">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundColorDark}, Light={StaticResource BackgroundColorLight}}" />
+            </Style>
+            <Style TargetType="sfListView:SfListView">
+                <Setter Property="SelectionBackgroundColor" Value="{AppThemeBinding Dark={StaticResource SelectedItemColorDark}, Light={StaticResource SelectedItemColorLight}}" />
+            </Style>
+
+            <!-- Common style for StackLayout -->
+            <Style TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Gray-Black}, Light={StaticResource Gray-100}}" />
+            </Style>
+
+            <!-- Common style for ContentPage -->
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Gray-Black}, Light={StaticResource Gray-100}}" />
+            </Style>
+
+            <!--  Common style for separator BoxView  -->
+            <Style x:Key="SeparatorStyle" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Gray-200}" />
+            </Style>
+
+            <!--  Common style for  Label  -->
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratMedium" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource Gray-900}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="16, 12" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Transparent}" />
+                <Setter Property="MaxLines" Value="2" />
+            </Style>
+
+            <!-- Common style for Label - Header -->
+            <Style
+                x:Key="LabelHeader"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="MontserratSemiBold"/>
+                <Setter Property="TextColor" Value="{StaticResource Gray-800}" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="16,0,0,0" />
+            </Style>
+
+            <!--  Common style for Label - Icon  -->
+            <Style x:Key="IconLabelStyle" TargetType="Label">
+                <Setter Property="Margin" Value="16,8" />
+                <Setter Property="TextColor" Value="{DynamicResource Gray-600}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontFamily" Value="MaterialDesignIcons" />
+            </Style>
+
+            <!--  Common style for entries  -->
+            <Style x:Key="EntryStyle" TargetType="control:BorderlessEntry">
+                <Setter Property="PlaceholderColor" Value="{StaticResource EntryPlaceholderColor}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="Margin" Value="15,0" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="ReturnType" Value="Next" />
+            </Style>
+
+            <!-- Common style for SfButtons -->
+            <Style
+                x:Key="SfButtonStyle" TargetType="sfButtons:SfButton">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="MontserratSemiBold"/>
+                <Setter Property="TextColor" Value="{StaticResource Gray-White}" />
+                <Setter Property="BorderColor" Value="{StaticResource Gray-300}" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="CornerRadius" Value="22" />
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryDarkenColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryLighterColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!--  Common style for flat buttons  -->
+            <Style x:Key="SfFlatButtonStyle" TargetType="sfButtons:SfButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="FontFamily" Value="MontserratSemiBold" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+
+            <!--  Common style for borders  -->
+            <Style x:Key="SfBorderStyle" TargetType="border:SfBorder">
+                <Setter Property="BackgroundColor" Value="{StaticResource BorderBackgroundColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource Transparent}" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+
+            <!-- Common style for SfSwitch -->
+            <Style
+                x:Key="SfSwitchStyle"
+                TargetType="sfButtons:SfSwitch">
+                <Setter Property="AllowIndeterminateState" Value="False" />
+                <Setter Property="HeightRequest" Value="28" />
+                <Setter Property="VisualType" Value="Cupertino" />
+                <!--
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="On">
+                                <VisualState.Setters>
+                                    <Setter Property="SwitchSettings">
+                                        <Setter.Value>
+                                            <sfButtons:CupertinoSwitchSettings
+                                                x:TypeArguments="sfButtons:OnState"
+                                                ThumbBorderColor="{StaticResource Gray-200}"
+                                                ThumbColor="{StaticResource Gray-White}"
+                                                TrackBorderColor="{StaticResource Gray-200}"
+                                                TrackColor="{StaticResource PrimaryDarkenColor}" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Off">
+                                <VisualState.Setters>
+                                    <Setter Property="SwitchSettings">
+                                        <Setter.Value>
+                                            <sfButtons:CupertinoSwitchSettings
+                                                x:TypeArguments="sfButtons:OffState"
+                                                ThumbBorderColor="{StaticResource Gray-200}"
+                                                ThumbColor="{StaticResource Gray-White}"
+                                                TrackBorderColor="{StaticResource Gray-200}"
+                                                TrackColor="{StaticResource Gray-200}" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+                -->
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

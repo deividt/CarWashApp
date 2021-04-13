@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                x:Class="CarWashApp.Views.LoginPage"
+                x:DataType="viewModels:LoginViewModel"
+                xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+                xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                xmlns:control="clr-namespace:CarWashApp.Controls"
+                xmlns:views="clr-namespace:CarWashApp.Views.Base" 
+                xmlns:viewModels="clr-namespace:CarWashApp.ViewModels"
+                xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+                Shell.NavBarIsVisible="False"
+                Shell.PresentationMode="ModalAnimated"
+                Shell.FlyoutBehavior="Disabled"
+                BackgroundColor="{StaticResource Gray-100}">
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.VerticalOptions>
+                <OnIdiom
+                    x:TypeArguments="LayoutOptions"
+                    Default="CenterAndExpand"
+                    Phone="FillAndExpand" />
+            </ScrollView.VerticalOptions>
+
+            <StackLayout Padding="10,0,10,0" VerticalOptions="FillAndExpand" Spacing="0"
+                         Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                                                                 PhoneLandscape='150,32',
+                                                                 TabletPortrait='200,50',
+                                                                 TabletLandscape='300,50',
+                                                                 Desktop='30'}">
+                <StackLayout HorizontalOptions="Center"
+                             Spacing="24"
+                             VerticalOptions="CenterAndExpand">
+
+
+                    <!--  Login - Título - Label  -->
+                    <Label FontFamily="MontserratSemiBold"
+                           FontSize="20"
+                           HorizontalOptions="Center"
+                           Style="{StaticResource LabelStyle}"
+                           Text="Login" />
+
+                    <!--  Login - Subtítulo - Label  -->
+                    <Label Margin="0,-16,0,8"
+                           HorizontalOptions="Center"
+                           Style="{StaticResource LabelStyle}"
+                           Text="Informe seus dados para iniciar"
+                           TextColor="{StaticResource Gray-800}" />
+
+                    <!--  Login - Senha  -->
+                    <border:SfBorder
+                        x:Name="borderUsuario"
+                        BackgroundColor="{StaticResource Gray-White}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="entryUsuario"
+                            Text="{Binding Usuario}"
+                            Placeholder="Usuário"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            TextColor="{StaticResource Gray-900}"
+                            ClearButtonVisibility="WhileEditing"
+                            ReturnType="Next"/>
+                    </border:SfBorder>
+
+                    <!--  Login - Senha  -->
+                    <border:SfBorder
+                        x:Name="borderSenha"
+                        BackgroundColor="{StaticResource Gray-White}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="entrySenha"
+                            Text="{Binding Senha}"
+                            IsPassword="true"
+                            Placeholder="Senha"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            TextColor="{StaticResource Gray-900}"
+                            ClearButtonVisibility="WhileEditing"
+                            ReturnType="Next"/>
+                    </border:SfBorder>
+
+                    <!--  Login  -->
+                    <buttons:SfButton
+                        x:Name="btnLogin"
+                        Command="{Binding LoginCommand}"
+                        CornerRadius="20"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="LOGIN" />
+
+                    <!--  Registrar  -->
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        VerticalOptions="FillAndExpand">
+
+                        <Label
+                            HorizontalOptions="FillAndExpand"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Não possui conta?"
+                            TextColor="{DynamicResource Gray-800}" />
+
+                        <buttons:SfButton
+                            x:Name="btnRegistrar"
+                            Command="{Binding RegistrarWebCommand}"
+                            HorizontalOptions="End"
+                            CornerRadius="4"
+                            Style="{StaticResource SfFlatButtonStyle}"
+                            Text="Registrar" />
+                    </StackLayout>
+
+                    <!--  Login pela web  -->
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        VerticalOptions="End">
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Erro ao logar?"
+                            TextColor="{DynamicResource Gray-800}" />
+
+                        <buttons:SfButton
+                            x:Name="btnLoginWeb"
+                            Command="{Binding LoginWebCommand}"
+                            CornerRadius="4"
+                            Style="{StaticResource SfFlatButtonStyle}"
+                            Text="Login pela Web" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</views:BaseView>

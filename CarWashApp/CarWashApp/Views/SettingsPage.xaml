@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="CarWashApp.Views.SettingsPage"
+                x:DataType="viewModels:SettingsViewModel"
+                xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                xmlns:views="clr-namespace:CarWashApp.Views.Base"
+                xmlns:controls="clr-namespace:CarWashApp.Controls"
+                xmlns:viewModels="clr-namespace:CarWashApp.ViewModels"
+                Shell.NavBarIsVisible="True"
+                Shell.PresentationMode="Animated"
+                Shell.TabBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <viewModels:SettingsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <!--  Header label Conta  -->
+                <Label Text="CONTA"
+                       Style="{StaticResource LabelHeader}"/>
+
+                <!--  Grid Editar Perfil  -->
+                <controls:TapAnimationGrid
+                    Command="{Binding EditarPerfilCommand}"
+                    BackgroundColor="{StaticResource Gray-White}"
+                    ColumnSpacing="0"
+                    RowSpacing="0"
+                    Tapped="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <!--  Editar Perfil - Ícone  -->
+                    <Label
+                        Grid.Column="0"
+                        Margin="16,0,0,0"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconAccountEdit_Mdi}" />
+                    <!--  Editar Perfil - Label  -->
+                    <Label
+                        Grid.Column="1"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Editar Perfil" />
+                    <!--  Editar Perfil - Navegação  -->
+                    <Label
+                        Grid.Column="2"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconNavigateNext_Mdi}" />
+                </controls:TapAnimationGrid>
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid Trocar Senha  -->
+                <controls:TapAnimationGrid
+                    Command="{Binding TrocarSenhaCommand}"
+                    BackgroundColor="{StaticResource Gray-White}"
+                    ColumnSpacing="0"
+                    RowSpacing="0"
+                    Tapped="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <!--  Trocar Senha Perfil - Ícone  -->
+                    <Label
+                        Grid.Column="0"
+                        Margin="16,0,0,0"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconAccountChangePassword_Mdi}" />
+                    <!--  Trocar Senha Perfil - Label  -->
+                    <Label
+                        Grid.Column="1"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Trocar Senha" />
+                    <!--  Trocar Senha Perfil - Navegação  -->
+                    <Label
+                        Grid.Column="2"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconNavigateNext_Mdi}" />
+                </controls:TapAnimationGrid>
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Header label Notificações  -->
+                <Label Text="NOTIFICAÇÕES"
+                       Style="{StaticResource LabelHeader}"/>
+
+                <!--  Grid Notificações  -->
+                <controls:TapAnimationGrid
+                    BackgroundColor="{StaticResource Gray-White}"
+                    ColumnSpacing="0"
+                    RowSpacing="0"
+                    Tapped="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <!--  Notificações - Ícone  -->
+                    <Label
+                        Grid.Column="0"
+                        Margin="16,0,0,0"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconNotification_Mdi}" />
+                    <!--  Notificações - Label  -->
+                    <Label
+                        Grid.Column="1"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Notificações" />
+                    <!--  Notificações - Switch  -->
+                    <buttons:SfSwitch
+                        Grid.Column="2"
+                        Margin="8,0"
+                        Style="{StaticResource SfSwitchStyle}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="On">
+                                    <VisualState.Setters>
+                                        <Setter Property="SwitchSettings">
+                                            <Setter.Value>
+                                                <buttons:CupertinoSwitchSettings
+                                                    x:TypeArguments="buttons:OnState"
+                                                    ThumbBorderColor="{StaticResource Gray-200}"
+                                                    ThumbColor="{StaticResource Gray-White}"
+                                                    TrackBorderColor="{StaticResource Gray-200}"
+                                                    TrackColor="{StaticResource PrimaryDarkenColor}" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Off">
+                                    <VisualState.Setters>
+                                        <Setter Property="SwitchSettings">
+                                            <Setter.Value>
+                                                <buttons:CupertinoSwitchSettings
+                                                    x:TypeArguments="buttons:OffState"
+                                                    ThumbBorderColor="{StaticResource Gray-200}"
+                                                    ThumbColor="{StaticResource Gray-White}"
+                                                    TrackBorderColor="{StaticResource Gray-200}"
+                                                    TrackColor="{StaticResource Gray-200}" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </buttons:SfSwitch>
+                </controls:TapAnimationGrid>
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Header label Notificações  -->
+                <Label Text="SOBRE"
+                       Style="{StaticResource LabelHeader}"/>
+
+                <!--  Grid Sobre Nós  -->
+                <controls:TapAnimationGrid
+                    Command="{Binding SobreNosCommand}"
+                    BackgroundColor="{StaticResource Gray-White}"
+                    ColumnSpacing="0"
+                    RowSpacing="0"
+                    Tapped="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <!--  Sobre Nós - Ícone  -->
+                    <Label
+                        Grid.Column="0"
+                        Margin="16,0,0,0"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconAbout_Mdi}" />
+                    <!--  Sobre Nós - Label  -->
+                    <Label
+                        Grid.Column="1"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Sobre Nós" />
+                    <!--  Sobre Nós - Navegação  -->
+                    <Label
+                        Grid.Column="2"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconNavigateNext_Mdi}" />
+                </controls:TapAnimationGrid>
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid Ajuda  -->
+                <controls:TapAnimationGrid x:Name="grdAjuda"
+                    Command="{Binding AjudaCommand}"
+                    BackgroundColor="{StaticResource Gray-White}"
+                    ColumnSpacing="0"
+                    RowSpacing="0"
+                    Tapped="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <!--  Ajuda - Ícone  -->
+                    <Label x:Name="labelAjudaIcone"
+                        Grid.Column="0"
+                        Margin="16,0,0,0"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconHelp_Mdi}" />
+                    <!--  Ajuda - Label  -->
+                    <Label x:Name="labelAjuda"
+                        Grid.Column="1"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Ajuda" />
+                    <!--  Ajuda - Navegação  -->
+                    <Label  x:Name="labelAjudaNavegacao"
+                        Grid.Column="2"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource IconNavigateNext_Mdi}" />
+                </controls:TapAnimationGrid>
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Logout button  -->
+                <buttons:SfButton x:Name="btnLogout"
+                    Command="{Binding LogoutCommand}"
+                    Margin="0,24,0,32"
+                    Style="{StaticResource SfButtonStyle}"
+                    Text="LOG OUT"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</views:BaseView>
