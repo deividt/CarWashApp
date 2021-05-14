@@ -185,7 +185,7 @@
                 <BoxView Style="{StaticResource SeparatorStyle}" />
 
                 <!--  Grid Ajuda  -->
-                <controls:TapAnimationGrid x:Name="grdAjuda"
+                <controls:TapAnimationGrid
                     Command="{Binding AjudaCommand}"
                     BackgroundColor="{StaticResource Gray-White}"
                     ColumnSpacing="0"
@@ -197,18 +197,18 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <!--  Ajuda - Ícone  -->
-                    <Label x:Name="labelAjudaIcone"
+                    <Label
                         Grid.Column="0"
                         Margin="16,0,0,0"
                         Style="{StaticResource IconLabelStyle}"
                         Text="{StaticResource IconHelp_Mdi}" />
                     <!--  Ajuda - Label  -->
-                    <Label x:Name="labelAjuda"
+                    <Label
                         Grid.Column="1"
                         Style="{StaticResource LabelStyle}"
                         Text="Ajuda" />
                     <!--  Ajuda - Navegação  -->
-                    <Label  x:Name="labelAjudaNavegacao"
+                    <Label
                         Grid.Column="2"
                         Style="{StaticResource IconLabelStyle}"
                         Text="{StaticResource IconNavigateNext_Mdi}" />
@@ -216,7 +216,7 @@
                 <BoxView Style="{StaticResource SeparatorStyle}" />
 
                 <!--  Logout button  -->
-                <buttons:SfButton x:Name="btnLogout"
+                <buttons:SfButton
                     Command="{Binding LogoutCommand}"
                     Margin="0,24,0,32"
                     Style="{StaticResource SfButtonStyle}"

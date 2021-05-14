@@ -40,11 +40,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Amazon.Extensions.CognitoAuthentication" Version="2.2.0" />
-    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.7.0.8" />
-    <PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.7.0.8" />
-    <PackageReference Include="AWSSDK.Core" Version="3.7.0.9" />
-    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.0.9" />
+    <PackageReference Include="Amazon.Extensions.CognitoAuthentication" Version="2.2.1" />
+    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.7.0.20" />
+    <PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.7.0.21" />
+    <PackageReference Include="AWSSDK.Core" Version="3.7.0.21" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.0.21" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.2.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.2.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.9.0" />
@@ -53,10 +53,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Licensing" Version="18.4.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.4.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="18.4.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.4.0.43" />
+    <PackageReference Include="Syncfusion.Licensing" Version="19.1.0.63" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.1.0.63" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="19.1.0.63" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="19.1.0.63" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
