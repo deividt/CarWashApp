@@ -82,6 +82,32 @@
                 </controls:TapAnimationGrid>
                 <BoxView Style="{StaticResource SeparatorStyle}" />
 
+                <!--  Header label Aparência  -->
+                <Label Text="APARÊNCIA"
+                       Style="{StaticResource LabelHeader}"/>
+
+                <!--  Grid Aparência  -->
+                <Grid
+                    ColumnDefinitions="*,*,*"
+                    ColumnSpacing="10">
+                    <RadioButton x:Name="radioButtonPadrao"
+                                 IsChecked="True"
+                                 Content="Padrao"
+                                 Style="{StaticResource RadioButtonStyle}"
+                                 CheckedChanged="radioButtonAparencia_CheckedChanged"/>
+                    <RadioButton x:Name="radioButtonClaro"
+                                 Grid.Column="1"
+                                 Content="Claro"
+                                 Style="{StaticResource RadioButtonStyle}"
+                                 CheckedChanged="radioButtonAparencia_CheckedChanged"/>
+                    <RadioButton x:Name="radioButtonEscuro"
+                                 Grid.Column="2"
+                                 Content="Escuro"
+                                 Style="{StaticResource RadioButtonStyle}"
+                                 CheckedChanged="radioButtonAparencia_CheckedChanged"/>
+                </Grid>
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
                 <!--  Header label Notificações  -->
                 <Label Text="NOTIFICAÇÕES"
                        Style="{StaticResource LabelHeader}"/>

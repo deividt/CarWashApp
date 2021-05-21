@@ -128,6 +128,15 @@
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Gray-Black}, Light={StaticResource Gray-100}}" />
             </Style>
 
+            <!--  Common style for  RadioButton  -->
+            <Style x:Key="RadioButtonStyle" TargetType="RadioButton">
+                <Setter Property="FontFamily" Value="MontserratMedium" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource Gray-900}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Gray-White}" />
+            </Style>
+
             <!--  Common style for separator BoxView  -->
             <Style x:Key="SeparatorStyle" TargetType="BoxView">
                 <Setter Property="HeightRequest" Value="1" />
